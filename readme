@@ -1,0 +1,79 @@
+Jay Patel
+CIS 3207: Operating Systems
+Project 2: Shell Lab
+
+Help Manual
+**********************************************************************************************************
+Use this document to learn how to use this program including things such as:
+    -Syntax
+    -Supported Commands
+    -Features
+**********************************************************************************************************
+General Syntax:
+    -path/prompt followed by argument/command
+        -ex: path_name/myshell> cd /Users/Jay
+    -arguments separated by whitespace or tabs
+    -press Enter to execute command
+**********************************************************************************************************
+Supported Internal Commands:
+    -cd <directory>: changes directory from current directory to specified directory
+    -clr: clear the terminal window
+    -dir <directory>: shows what is inside the specified directory
+    -environ: lists all environment strings
+    -echo <comment>: displays comment on screen followed by newline
+    -help: will display this readme doc (can scroll through)
+    -pause: command line is paused until until user presses Enter
+    -quit: exits shell
+**********************************************************************************************************
+FEATURES:
+
+IO Redirection:
+    -This shell allows users to use files as input/outputs, a process known as IO redirection:
+    -Types:
+        Output 1:
+            -Syntax: command > file
+            -example: pwd > list.txt
+            -this will take the output of pwd and put in the file list.txt and it will erase whatever
+             was in list.txt before
+        Output 2:
+            -Syntax: command >> file
+            -example: pwd >> list.txt
+            -this will take output of pwd and append to the file list.txt without erasing anything
+        Input:
+            -Syntax: command > file
+            -example: program.out < inputFile.txt
+            -this will run the program program.out and pass in inputFile.txt as an input
+        Mixing Input and Output:
+            -can use IO redirection with both input and output
+            -example: wc < in.txt > out.txt
+            -this will count the lines, words, and characters in file in.txt and output
+             this count to out.txt
+----------------------------------------------------------------------------------------------------------
+Piping:
+    -This shell supports piping which essentially takes the output of one program and uses it as
+     the input of another program.
+    -General Syntax: cmd1 args | cmd2 args
+    -example: ls | wc
+    -This will take output of ls and use at as input for wc
+----------------------------------------------------------------------------------------------------------
+Background Processes:
+    -This shell supports running processes in the background
+    -Syntax: command & (note that & must be at end and not anywhere else)
+    -example: ls &
+    -this will run ls command in background
+----------------------------------------------------------------------------------------------------------
+Parallel Commands:
+    -This shell supports running multiple commands in parallel.
+    -Syntax: cmd1 & cmd2 args & cmd3
+    -example: ls & pwd & echo 3
+    -This will run ls, pwd, and echo in parallel with one another.
+----------------------------------------------------------------------------------------------------------
+Batch File Use:
+    -This shell supports running the shell with a batchfile as an argument. Batchfile should have
+     valid commands.
+    -Syntax: myshell filename
+    -example: myshell batchfile
+    -This should be done outside of shell program as in before running the executable and not after
+     shell is already running
+**********************************************************************************************************
+

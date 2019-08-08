@@ -1,0 +1,10 @@
+echo 5
+./infile < in
+path /bin /Users/jay/Downloads/Lab_2
+help
+./infile2 < in | ./infile > out
+echo >> out
+echo 5 & echo 2 & ./infile2 < in
+dir
+quit
+pwd
